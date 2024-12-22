@@ -20,9 +20,9 @@ const Auth = (props) => {
         <TabPanel p={0}>
           <Login handleTabsChange={handleTabsChange} />
         </TabPanel>
-        <TabPanel>
+        {/* <TabPanel>
           <Signup handleTabsChange={handleTabsChange} />
-        </TabPanel>
+        </TabPanel> */}
       </TabPanels>
     </Tabs>
   );

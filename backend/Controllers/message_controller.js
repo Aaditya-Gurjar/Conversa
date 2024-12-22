@@ -94,6 +94,10 @@ const allMessage = async (req, res) => {
   }
 };
 
+// const deleteMsgs = async(req, res) => {
+//   await 
+// }
+
 const deletemesage = async (req, res) => {
   const msgid = req.body.messageid;
   const userids = req.body.userids;

@@ -248,12 +248,7 @@ const Login = (props) => {
           </CardBody>
         </Card>
       </Stack>
-      <Box>
-        New to us?{" "}
-        <Link color="purple.500" onClick={() => handletabs(1)}>
-          Sign Up
-        </Link>
-      </Box>
+      
     </Flex>
   );
 };

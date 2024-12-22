@@ -84,6 +84,19 @@ const ChatAreaTop = () => {
     return lastSeenString;
   };
 
+  const handleLogout = async (e) => {
+    e.preventDefault();
+   
+    setMessageList([]);
+    setActiveChatId("");
+    setReceiver({});
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    // console.log("logout");
+    window.location.reload();
+    navigator("/");
+  };
+
   useEffect(() => {
     getReceiverOnlineStatus();
   }, [receiver?._id]);
@@ -107,6 +120,9 @@ const ChatAreaTop = () => {
             borderRadius={"0px"}
             onClick={onOpen}
           >
+            <Button colorScheme="blue" onClick={handleLogout}>
+              Logout
+            </Button>
             {isChatLoading ? (
               <>
                 <Flex>

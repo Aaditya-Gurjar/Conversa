@@ -128,6 +128,21 @@ const MyChatList = (props) => {
 
   const [squery, setsquery] = useState("");
 
+  
+  
+  const handleLogout = async (e) => {
+    e.preventDefault();
+   
+    setMessageList([]);
+    setActiveChatId("");
+    setReceiver({});
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    // console.log("logout");
+    window.location.reload();
+    navigator("/");
+  };
+
   const handleUserSearch = async (e) => {
     if (e.target.value !== "") {
       setsquery(e.target.value.toLowerCase());
@@ -215,6 +230,14 @@ const MyChatList = (props) => {
           <Text mb={"10px"} fontWeight={"bold"} fontSize={"2xl"}>
             Chats
           </Text>
+<Flex gap={2}>
+{/* <Button colorScheme="red" onClick={handleDeleteChat}>
+  Delete Chats
+</Button> */}
+<Button colorScheme="blue" onClick={handleLogout}>
+  Logout
+</Button>
+</Flex>
 
           <Flex>
             <InputGroup w={{ base: "fit-content", md: "fit-content" }} mx={2}>
@@ -374,3 +397,4 @@ const MyChatList = (props) => {
 };
 
 export default MyChatList;
+
